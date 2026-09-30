@@ -43,15 +43,15 @@ Unlike Backpropagation (which propagates error backward layer-by-layer) or Direc
 ```mermaid
 flowchart LR
     subgraph Forward Pass
-        X[Input x] -->|$$W_1$$| H1[Hidden Layer 1]
-        H1 -->|$$W_2$$| H2[Hidden Layer 2]
-        H2 -->|$$W_3$$| OUT[Output Layer]
+        X[Input x] -->|W1| H1[Hidden Layer 1]
+        H1 -->|W2| H2[Hidden Layer 2]
+        H2 -->|W3| OUT[Output Layer]
         OUT --> ERR((Global Error e))
     end
 
     %% IFA Feedback
-    ERR ==>|$$Projection \; Matrix: \; B_1$$| H1
-    H1 -.->|$$Forward \; Relay: \; W_2 * \; \delta a_1$$| H2
+    ERR ==>|Projection Matrix: B1| H1
+    H1 -.->|Forward Relay: W2 * delta_a1| H2
 ```
 ---
 
